@@ -1,2 +1,172 @@
-# heii
-web
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Pacarku Tercinta</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffe0ec, #e0f7fa);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: inline-block;
+      padding: 32px 24px;
+      margin-top: 40px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1.2s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h1 {
+      color: #d81b60;
+      opacity: 0;
+      animation: fadeInText 1.2s 0.5s forwards;
+    }
+    .love {
+      font-size: 48px;
+      color: #d81b60;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeInText 1.2s 0.2s forwards;
+    }
+    p {
+      opacity: 0;
+      animation: fadeInText 1.2s 1s forwards;
+    }
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+      }
+    }
+    img {
+      max-width: 180px;
+      border-radius: 50%;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeInText 1.2s 0.7s forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- Audio backsound otomatis play -->
+  <audio id="backsound" src="b/b.mp3">
+  </audio>
+  <!-- ...existing code... -->
+<div class="card">
+  <!-- ...existing code... -->
+  <button 
+    onclick="document.getElementById('backsound').play()" 
+    class="musik-btn"
+  >
+    Putar Musik
+  </button>
+  <div class="love">❤️</div>
+  <h1>Hai Kekeeeee!</h1>
+  <img src="a/a.jpg" alt="Foto Pacar">
+  <p>
+    Aku tahu hari-hari belakangan ini mungkin terasa berat dan melelahkan untukmu. Tapi aku ingin kamu tahu satu hal yang pasti, aku di sini. Selalu. Menemanimu, mendukungmu, dan percaya sepenuhnya padamu. Kamu jauh lebih kuat dari apa yang kamu pikirkan. Kadang kita semua lupa, tapi kekuatan itu selalu ada dalam dirimu — dalam caramu bangkit setiap pagi meski lelah, dalam caramu terus berjuang meski dunia seperti menantangmu.<br>
+        <br>
+    Aku bangga padamu. Bukan karena kamu sempurna, tapi karena kamu terus berusaha meski dunia tidak selalu adil. Aku tahu kamu capek, aku tahu kadang kamu ingin menyerah… tapi tolong ingat, kamu nggak sendiri. Kamu punya aku. Dan aku nggak akan pergi.<br>
+        <br>
+    Setiap langkah kecil yang kamu ambil, setiap perjuangan yang kamu hadapi, semuanya berarti. Jangan pernah meremehkan dirimu sendiri. Bahkan ketika kamu merasa tidak cukup, di mataku kamu lebih dari cukup. Kamu luar biasa. Kamu menginspirasi aku setiap hari untuk menjadi lebih baik, hanya dengan menjadi dirimu sendiri.<br>
+        <br>
+    Jadi hari ini, ambil napas dalam-dalam. Istirahat kalau kamu butuh. Tapi jangan pernah berhenti. Karena aku yakin, ada hal-hal indah yang sedang menunggumu di depan sana. Dan ketika kamu lelah, sandarkan hatimu padaku. Aku akan jadi tempatmu pulang, kapan pun kamu butuh.<br>
+        <br>
+    I love you! 💖
+  </p>
+  <button onclick="keluarkanLove()" style="margin-top:20px; padding:10px 24px; border-radius:24px; background:#d81b60; color:white; border:none; font-size:18px; cursor:pointer;"> Klik Inii 👉🏻 ❤️</button>
+  <!-- Tombol emoji mata bintang -->
+  <button onclick="keluarkanBintang()" style="margin-top:16px; padding:10px 24px; border-radius:24px; background:#ffd700; color:#333; border:none; font-size:18px; cursor:pointer;">✨👀✨</button>
+</div>
+<div id="love-container"></div>
+<div id="bintang-container"></div>
+<script>
+  function keluarkanLove() {
+    for(let i=0; i<20; i++){
+      const love = document.createElement('span');
+      love.textContent = '❤️';
+      love.className = 'love-float';
+      love.style.left = (Math.random()*90+5) + 'vw';
+      love.style.animationDelay = (Math.random()*1.5) + 's';
+      document.getElementById('love-container').appendChild(love);
+      setTimeout(()=>love.remove(), 3000);
+    }
+  }
+  function keluarkanBintang() {
+    for(let i=0; i<18; i++){
+      const bintang = document.createElement('span');
+      bintang.textContent = '✨👀✨';
+      bintang.className = 'bintang-float';
+      bintang.style.left = (Math.random()*90+5) + 'vw';
+      bintang.style.animationDelay = (Math.random()*1.5) + 's';
+      document.getElementById('bintang-container').appendChild(bintang);
+      setTimeout(()=>bintang.remove(), 3000);
+    }
+  }
+</script>
+<style>
+  /* ...existing code... */
+  .musik-btn {
+    margin-bottom: 18px;
+    padding: 12px 32px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #80deea 40%, #ffe0ec 100%);
+    color: #014c55;
+    border: 2px solid #d81b60;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(216,27,96,0.12);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .musik-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(216,27,96,0.18);
+    background: linear-gradient(90deg, #ffe0ec 40%, #80deea 100%);
+    color: #d81b60;
+  }
+  /* ...existing code... */
+  #love-container, #bintang-container {
+    position: fixed;
+    left: 0; top: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99;
+  }
+  .love-float {
+    position: absolute;
+    bottom: 0;
+    font-size: 2.2em;
+    animation: loveUp 2.5s cubic-bezier(.5,-0.5,.5,1.5) forwards;
+    user-select: none;
+  }
+  .bintang-float {
+    position: absolute;
+    bottom: 0;
+    font-size: 2em;
+    animation: bintangUp 2.7s cubic-bezier(.5,-0.5,.5,1.5) forwards;
+    user-select: none;
+    filter: drop-shadow(0 0 6px #ffd700);
+  }
+  @keyframes loveUp {
+    to {
+      transform: translateY(-90vh) scale(1.3) rotate(20deg);
+      opacity: 0;
+    }
+  }
+  @keyframes bintangUp {
+    to {
+      transform: translateY(-95vh) scale(1.2) rotate(-15deg);
+      opacity: 0;
+    }
+  }
+</style>
+<!-- ...existing code... -->
